@@ -6,25 +6,45 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" />
     <link rel="stylesheet" type="text/css" href="./main.css" />
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
   </head>
   <body>
 
     <div class="main">
 
       <div class="menu">
-        <h1 class="menu__site-name">satoshikimura.tokyo</h1>
-        <ul class="photo-suits">
-          <li class="photo-suits__item"><a class="js-link" href="htdc">How to desapeear completely</a>
-          <li class="photo-suits__item"><a class="js-link" href="b">B</a>
+        <h1 class="menu__site-name js-link" href="main">satoshikimura</h1>
+        <ul class="menu__photo-suits">
+          <li class="menu__photo-suit"><a class="js-link" href="htdc">How to desapeear completely</a>
         </ul>
+        <div class="menu__address">
+          <a href="mailto:yamakabe969@gmail.com">yamakabe969@gmail.com</a>
+        </div>
+      </div>
+
+      <div class="content content--video js-hidden-content" data-href="main">
+        <video autoplay
+           loop
+           width="100%"
+           id="main-video"
+           >
+          <source
+           src="movies/mashiko.mp4">
+          ビデオ対応のブラウザで見てください
+        </video>
       </div>
 
       <div class="content content--hidden js-hidden-content" data-href="htdc">
         <div class="content__desc">
-          How to!!!!!!!!!!!!!
+          How to desapeear completely
         </div>
+
         <ul class="content__list">
-          <li class="content__list-item"><img src="images/lenna.png" alt="lenna" decoding="async"> </li>
+          <li class="content__list-item"><img class="lazyload" src="images/lenna.png" alt="lenna"> </li>
+          <li class="content__list-item"><img class="lazyload" src="images/lenna.png" alt="lenna"> </li>
+          <li class="content__list-item"><img class="lazyload" src="images/lenna.png" alt="lenna"> </li>
+          <li class="content__list-item"><img class="lazyload" src="images/lenna.png" alt="lenna"> </li>
+          <li class="content__list-item"><img class="lazyload" src="images/lenna.png" alt="lenna"> </li>
         </ul>
       </div>
 
@@ -33,6 +53,7 @@
       </div>
       <script>
         $(function(){
+          document.getElementById('main-video').muted = true;
           $('.js-link').on('click', function(event){
             event.preventDefault();
             var targetHref = $(event.currentTarget).attr('href');
