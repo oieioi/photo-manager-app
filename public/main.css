@@ -1,18 +1,18 @@
 body {
-  background-color: green;
+  background-color: white;
 }
 
 .main {
 }
 
 .menu {
-  background-color: purple;
+  background-color: white;
   padding: 10px;
 }
 
 .menu__site-name {
   font-size: 2.0em;
-  color: red;
+  color: black;
 }
 
 .photo-suits {
@@ -26,7 +26,7 @@ body {
 }
 
 .content {
-  background-color: blue;
+  background-color: white;
 }
 
 .content--hidden {
