@@ -10,17 +10,20 @@ body {
   background-color: transparent;
   padding: 10px;
 }
+.menu__site-info {
+  display: block;
+}
 
 .menu__site-name {
+  background-color: rgba(19, 142, 158, 0.5);
+  display: inline-block;
   font-size: 2.0em;
   color: #ff7100;
   cursor: pointer;
 }
 
-
 .menu__photo-suits {
   display: inline-block;
-
 }
 
 .menu__photo-suit {
