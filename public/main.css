@@ -1,5 +1,6 @@
 body {
   background-color: transparent;
+  font-family: Courier, monospace;
 }
 
 .main {
@@ -56,10 +57,12 @@ body {
 
 .content__desc {
   font-weight: bold;
-
+  margin: 10px 0;
 }
 
 .content__list-item {
   display: inline-block;
-  border: 1px solid black;
+}
+.content__list-item img {
+  border: 1px solid #ddd;
 }
