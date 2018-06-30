@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>satoshikimura</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" />
+    <link rel="stylesheet" type="text/css" href="./main.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  </head>
+  <body>
+
+    <div class="main">
+
+      <div class="menu">
+        <h1 class="menu__site-name">satoshikimura.tokyo</h1>
+        <ul class="photo-suits">
+          <li class="photo-suits__item"><a class="js-link" href="htdc">How to desapeear completely</a>
+          <li class="photo-suits__item"><a class="js-link" href="b">B</a>
+        </ul>
+      </div>
+
+      <div class="content content--hidden js-hidden-content" data-href="htdc">
+        <div class="content__desc">
+          How to!!!!!!!!!!!!!
+        </div>
+        <ul class="content__list">
+          <li class="content__list-item"><img src="images/lenna.png" alt="lenna" decoding="async"> </li>
+        </ul>
+      </div>
+
+      <div class="content content--hidden js-hidden-content" data-href="b">
+        B
+      </div>
+      <script>
+        $(function(){
+          $('.js-link').on('click', function(event){
+            event.preventDefault();
+            var targetHref = $(event.currentTarget).attr('href');
+            var $hiddenContent = $('.js-hidden-content');
+            $hiddenContent.hide();
+            $hiddenContent.filter('[data-href="'+ targetHref +'"]').show();
+          });
+        });
+      </script>
+    </div>
+  </body>
+</html>

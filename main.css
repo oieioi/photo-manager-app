@@ -1,0 +1,34 @@
+body {
+  background-color: green;
+}
+
+.main {
+}
+
+.menu {
+  background-color: purple;
+  padding: 10px;
+}
+
+.menu__site-name {
+  font-size: 2.0em;
+  color: red;
+}
+
+.photo-suits {
+
+}
+
+.photo-suits__item {
+  display: inline-block;
+  list-style: none;
+  margin-left: 10px;
+}
+
+.content {
+  background-color: blue;
+}
+
+.content--hidden {
+  display: none;
+}
