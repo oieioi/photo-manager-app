@@ -1,0 +1,11 @@
+{
+  "name": "satoshikimura",
+  "private": true,
+  "scripts": {
+    "start": "nf start"
+  },
+  "dependencies": {
+    "serve": "~2.1.2",
+    "foreman": "~2.0.0"
+  }
+}
