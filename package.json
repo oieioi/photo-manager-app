@@ -1,11 +1,5 @@
 {
-  "name": "satoshikimura",
+  "name": "rail-boot",
   "private": true,
-  "scripts": {
-    "start": "nf start"
-  },
-  "dependencies": {
-    "serve": "~2.1.2",
-    "foreman": "~2.0.0"
-  }
+  "dependencies": {}
 }
