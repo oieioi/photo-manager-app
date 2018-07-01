@@ -1,4 +1,4 @@
-<%= form_with(model: exhibition, url: admin_exhibitions_path, local: true) do |form| %>
+<%= nested_form_for(exhibition, url: exhibition.persisted? ? admin_exhibition_path(exhibition) : admin_exhibitions_path, local: true) do |f| %>
   <% if exhibition.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(exhibition.errors.count, "error") %> prohibited this exhibition from being saved:</h2>
@@ -10,12 +10,32 @@
       </ul>
     </div>
   <% end %>
-  <%= form.label :name %>
-  <%= form.text_field :name %>
-  <%= form.label :description %>
-  <%= form.text_area :description %>
+
+  <dl>
+    <dt><%= f.label :name %></dt>
+    <dd><%= f.text_field :name %></dd>
+    <dt><%= f.label :description %></dt>
+    <dd><%= f.text_area :description %></dd>
+    <dt><%= f.label :photos %></dt>
+    <dd>
+      <ul>
+        <%= f.fields_for :photos do |ff| %>
+          <li>
+            <dl>
+            <dt><%= ff.label :image %></dt>
+            <dd><%= ff.object.persisted? ? image_tag(ff.object.image.to_s) : ff.file_field(:image) %></dd>
+            <dt><%= ff.label :order %></dt>
+            <dd><%= ff.number_field :order %></dd>
+            </dl>
+            <%=  ff.link_to_remove 'deleta' %>
+          </li>
+        <% end %>
+      </ul>
+      <%=  f.link_to_add 'Add photo', :photos %>
+    </dd>
+  </dl>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= f.submit %>
   </div>
 <% end %>

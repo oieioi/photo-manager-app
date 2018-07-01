@@ -5,6 +5,12 @@
   <dd><%= @exhibition.name %></dd>
   <dt>description</dt>
   <dd><%= @exhibition.description %></dd>
+  <dt>photos</dt>
+  <dd>
+    <% @exhibition.photos.each do |p| %>
+      <%= image_tag p.image.to_s %>
+    <% end %>
+  </dd>
 </dl>
 
 <%= link_to 'Edit', edit_admin_exhibition_path(@exhibition) %> |

@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2018_07_01_094715) do
   create_table "exhibitions", force: :cascade do |t|
     t.string "name"
     t.text "description"
+    t.integer "order"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

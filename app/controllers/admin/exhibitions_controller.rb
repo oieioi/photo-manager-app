@@ -57,6 +57,8 @@ class Admin::ExhibitionsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def exhibition_params
       params.fetch(:exhibition, {})
-        .permit(:name, :description)
+        .permit(:name,
+                :description,
+                photos_attributes: [:id, :image, :_destroy])
     end
 end
