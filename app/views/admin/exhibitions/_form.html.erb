@@ -1,0 +1,21 @@
+<%= form_with(model: exhibition, url: admin_exhibitions_path, local: true) do |form| %>
+  <% if exhibition.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(exhibition.errors.count, "error") %> prohibited this exhibition from being saved:</h2>
+
+      <ul>
+      <% exhibition.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <%= form.label :description %>
+  <%= form.text_area :description %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
