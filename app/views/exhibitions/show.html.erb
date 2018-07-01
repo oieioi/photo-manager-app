@@ -1,0 +1,13 @@
+<div class="content">
+  <div class="content__desc">
+    <%= @exhibition.name %>
+  </div>
+
+  <ul class="content__list">
+    <% @exhibition.photos.each do |photo| %>
+    <li class="content__list-item">
+      <%= image_tag photo.image.to_s, class: 'lazyload', alt: photo.id %>
+    </li>
+    <% end %>
+  </ul>
+</div>
