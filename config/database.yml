@@ -18,3 +18,4 @@ test:
 production:
   <<: *default
   database: photo_manager_production
+  url: <%= ENV['DATABASE_URL'] %>
