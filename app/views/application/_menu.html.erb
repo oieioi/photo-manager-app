@@ -1,7 +1,7 @@
 <div class="menu">
   <div class="menu__site-info">
     <%= link_to root_path do %>
-      <h1 class="menu__site-name">satoshikimura</h1>
+      <h1 class="menu__site-name"><%= @site.name %></h1>
     <% end %>
   </div>
   <menu>
@@ -9,7 +9,7 @@
       <% @exhibitions.each do |e| %>
         <li class="menu__photo-suit"><%= link_to e.name, e %></li>
       <% end %>
-      <li class="menu__photo-suit"><%= link_to 'satoshikimura', about_path %></li>
+      <li class="menu__photo-suit"><%= link_to @site.name, about_path %></li>
     </ul>
   </menu>
 </div>

@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   namespace :admin do
     get '/', to: 'dashboard#index'
     resources :exhibitions
+    resources :sites, only: [:update, :edit]
   end
 end

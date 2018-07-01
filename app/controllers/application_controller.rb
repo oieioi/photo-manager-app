@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
 
   def load_masters
     @exhibitions = Exhibition.all
+    @site = Site.first
   end
 
   def render_403
