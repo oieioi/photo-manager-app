@@ -1,4 +1,4 @@
-<%= form_for(site, url: admin_site_path(site), local: true) do |form| %>
+<%= form_for(site, url: admin_site_path(site), local: true) do |f| %>
   <% if site.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(site.errors.count, "error") %> prohibited this site from being saved:</h2>
@@ -10,29 +10,18 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :author_name %>
-    <%= form.text_field :author_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
-
+  <dl class="admin-content-form__container">
+    <dt class="admin-content-form__label"><%= f.label :name %></dt>
+    <dd class="admin-content-form__input-container"><%= f.text_field :name, class: 'admin-content-form__input' %></dd>
+    <dt class="admin-content-form__label"><%= f.label :author_name %></dt>
+    <dd class="admin-content-form__input-container"><%= f.text_field :author_name, class: 'admin-content-form__input' %></dd>
+    <dt class="admin-content-form__label"><%= f.label :description %></dt>
+    <dd class="admin-content-form__input-container"><%= f.text_area :description, class: 'admin-content-form__text-area' %></dd>
+    <dt class="admin-content-form__label"><%= f.label :email %></dt>
+    <dd class="admin-content-form__input-container"><%= f.text_field :email, class: 'admin-content-form__input' %></dd>
+  </dl>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= f.submit %>
   </div>
 <% end %>

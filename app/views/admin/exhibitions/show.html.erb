@@ -1,17 +1,20 @@
-<p id="notice"><%= notice %></p>
+<div class="admin-content">
+  <h1 class="admin-content__title">Exhibitions - <%= @exhibition.name %></h1>
 
-<dl>
-  <dt>name</dt>
-  <dd><%= @exhibition.name %></dd>
-  <dt>description</dt>
-  <dd><%= @exhibition.description %></dd>
-  <dt>photos</dt>
-  <dd>
+  <%= link_to '< Back', admin_exhibitions_path %> |
+  <%= link_to 'Edit', edit_admin_exhibition_path(@exhibition) %>
+
+  <dl class="admin-exhibition">
+    <dt class="admin-exhibition">name</dt>
+    <dd><%= @exhibition.name %></dd>
+    <dt>description</dt>
+    <dd><%= @exhibition.description %></dd>
+    <dt>photos</dt>
+    <dd>
     <% @exhibition.photos.each do |p| %>
       <%= image_tag p.image.to_s %>
     <% end %>
-  </dd>
-</dl>
+    </dd>
+  </dl>
+</div>
 
-<%= link_to 'Edit', edit_admin_exhibition_path(@exhibition) %> |
-<%= link_to 'Back', admin_exhibitions_path %>

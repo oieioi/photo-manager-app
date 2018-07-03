@@ -13,7 +13,10 @@
   </head>
 
   <body class="admin">
-    <header class="admin__title">Admin</header>
+    <header class="admin__title">
+      <%= link_to admin_path, admin_path%>
+      <%= link_to root_path, root_path%>
+    </header>
     <%= render 'admin/menu' %>
     <% if flash.present? %>
       <ul class="flash">

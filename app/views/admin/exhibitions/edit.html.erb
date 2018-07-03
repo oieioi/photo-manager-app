@@ -1,6 +1,6 @@
-<h1>Editing Exhibition</h1>
+<div class="admin-content">
+  <h1>Edit Exhibition - <%= @exhibition.name %></h1>
 
-<%= render 'form', exhibition: @exhibition %>
-
-<%= link_to 'Show', admin_exhibition_path(@exhibition) %> |
-<%= link_to 'Back', admin_exhibitions_path %>
+  <%= link_to '< Back', admin_exhibitions_path %>
+  <%= render 'form', exhibition: @exhibition %>
+</div>

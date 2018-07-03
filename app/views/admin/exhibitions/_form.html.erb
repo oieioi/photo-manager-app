@@ -1,37 +1,52 @@
-<%= nested_form_for(exhibition, url: exhibition.persisted? ? admin_exhibition_path(exhibition) : admin_exhibitions_path, local: true) do |f| %>
+<%= nested_form_for(exhibition,
+                    url: exhibition.persisted? ? admin_exhibition_path(exhibition) : admin_exhibitions_path,
+                    local: true,
+                    class: 'admin-content-form'
+                   ) do |f| %>
   <% if exhibition.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(exhibition.errors.count, "error") %> prohibited this exhibition from being saved:</h2>
-
       <ul>
-      <% exhibition.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% exhibition.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
-  <dl>
-    <dt><%= f.label :name %></dt>
-    <dd><%= f.text_field :name %></dd>
-    <dt><%= f.label :description %></dt>
-    <dd><%= f.text_area :description %></dd>
-    <dt><%= f.label :photos %></dt>
-    <dd>
-      <ul>
-        <%= f.fields_for :photos do |ff| %>
-          <li>
-            <dl>
-            <dt><%= ff.label :image %></dt>
-            <dd><%= ff.object.persisted? ? image_tag(ff.object.image.to_s) : ff.file_field(:image) %></dd>
-            <dt><%= ff.label :order %></dt>
-            <dd><%= ff.number_field :order %></dd>
+  <dl class="admin-content-form__container">
+    <dt class="admin-content-form__label"><%= f.label :name %></dt>
+    <dd class="admin-content-form__input-container">
+      <%= f.text_field :name, class: 'admin-content-form__input' %>
+    </dd>
+    <dt class="admin-content-form__label"><%= f.label :description %></dt>
+    <dd class="admin-content-form__input-container">
+      <%= f.text_area :description, class: 'admin-content-form__text-area' %>
+    </dd>
+    <dt class="admin-content-form__label"><%= f.label :photos %></dt>
+    <dd class="admin-content-form__input-container">
+      <%=  f.link_to_add 'Add photo', :photos, data: { target: "#photos" } %>
+      <ul class="admin-content-form__photos" id="photos">
+        <%= f.fields_for :photos, wrapper: false do |ff| %>
+          <li class="admin-content-form__photo">
+            <%=  ff.link_to_remove 'remove this' %>
+            <dl class="admin-content-form__photo-info">
+              <dt class="admin-content-form__label">
+                <%= ff.label :image %>
+              </dt>
+              <dd class="admin-content-form__input-container admin-content-form__input-container-uploader">
+                <%= ff.object.persisted? ? image_tag(ff.object.image.to_s) : ff.file_field(:image) %>
+              </dd>
+              <dt class="admin-content-form__label">
+                <%= ff.label :order %>
+              </dt>
+              <dd class="admin-content-form__input-container">
+                <%= ff.number_field :order %>
+              </dd>
             </dl>
-            <%=  ff.link_to_remove 'deleta' %>
           </li>
         <% end %>
       </ul>
-      <%=  f.link_to_add 'Add photo', :photos %>
     </dd>
   </dl>
 
