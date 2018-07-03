@@ -1,10 +1,13 @@
 class ApplicationController < ActionController::Base
   before_action :load_masters
 
-
   def authenticate_admin!
-    return if session[:logined_as_admin] == true
+    return if authenticated?
     render_403
+  end
+
+  def authenticated?
+    session[:logined_as_admin] == true
   end
 
   private
@@ -16,6 +19,6 @@ class ApplicationController < ActionController::Base
   end
 
   def render_403
-    render 'errors/403', status: 403
+    render 'errors/403', status: 403, layout: nil
   end
 end

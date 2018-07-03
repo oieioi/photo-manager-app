@@ -6,9 +6,10 @@ Rails.application.routes.draw do
   resources :exhibitions, only: [:show]
   resources :texts, only: [:show]
 
-  resources :sessions, only: [:create, :new]
   namespace :admin do
-    get '/', to: 'dashboard#index'
+    get '/', to: 'sessions#new'
+    resources :dashboard, only: [:index]
+    resources :sessions, only: [:create, :new, :destroy]
     resources :sites, only: [:update, :edit]
     resources :exhibitions
     resources :texts
