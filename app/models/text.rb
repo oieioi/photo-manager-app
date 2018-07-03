@@ -4,4 +4,6 @@ class Text < ApplicationRecord
   attribute :title, :string, default: 'no title'
   attribute :body, :string, default: ''
   attribute :published, :boolean, default: false
+
+  scope :published, -> { where(published: true) }
 end

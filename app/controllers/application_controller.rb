@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
 
   def load_masters
     @exhibitions = Exhibition.all
+    @texts = Text.published
     @site = Site.first
   end
 
