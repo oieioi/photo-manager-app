@@ -1,0 +1,9 @@
+<div class="admin-content">
+  <h1 class="admin-content__title">Texts - <%= @text.title %></h1>
+
+  <%= link_to '< Back', admin_texts_path %> |
+  <%= link_to 'Edit', edit_admin_text_path(@text) %>
+
+  <%= simple_format(@text.body) %>
+</div>
+

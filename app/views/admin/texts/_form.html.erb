@@ -1,0 +1,32 @@
+<%= form_for(text,
+                    url: text.persisted? ? admin_text_path(text) : admin_texts_path,
+                    local: true,
+                    class: 'admin-content-form'
+                   ) do |f| %>
+  <% if text.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(text.errors.count, "error") %> prohibited this text from being saved:</h2>
+      <ul>
+        <% text.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <dl class="admin-content-form__container">
+    <dt class="admin-content-form__label"><%= f.label :title %></dt>
+    <dd class="admin-content-form__input-container"> <%= f.text_field :title, class: 'admin-content-form__input' %></dd>
+    <dt class="admin-content-form__label"><%= f.label :published %></dt>
+    <dd class="admin-content-form__input-container"> <%= f.check_box :published, class: 'admin-content-form__input' %></dd>
+ 
+    <dt class="admin-content-form__label"><%= f.label :body %></dt>
+    <dd class="admin-content-form__input-container">
+      <%= f.text_area :body, class: 'admin-content-form__text-area' %>
+    </dd>
+  </dl>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,27 @@
+<div class="admin-content">
+  <h1 class="admin-content__title">Texts</h1>
+  <%= link_to 'Create new text', new_admin_text_path %>
+  <table class="admin-content__table">
+    <thead class="admin-content__thead">
+      <tr class="admin-content__thead-tr">
+        <th class="admin-content__thead-th">title</th>
+        <th class="admin-content__thead-th">body</th>
+        <th class="admin-content__thead-th">published?</th>
+        <th class="admin-content__thead-th" colspan="3">Operations</th>
+      </tr>
+    </thead>
+
+    <tbody class="admin-content__tbody">
+      <% @texts.each do |text| %>
+        <tr class="admin-content__tr">
+          <td class="admin-content__td"><%= text.title %></td>
+          <td class="admin-content__td"><%= truncate(text.body) %></td>
+          <td class="admin-content__td"><%= text.published? %></td>
+          <td class="admin-content__td"><%= link_to 'Show', admin_text_path(text) %></td>
+          <td class="admin-content__td"><%= link_to 'Edit', edit_admin_text_path(text) %></td>
+          <td class="admin-content__td"><%= link_to 'Destroy', admin_text_path(text), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
