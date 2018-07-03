@@ -31,18 +31,16 @@
           <li class="admin-content-form__photo">
             <%=  ff.link_to_remove 'remove this' %>
             <dl class="admin-content-form__photo-info">
+              <dt class="admin-content-form__label"><%= ff.label :title %></dt>
+              <dd class="admin-content-form__input-container"><%= ff.text_field :title, class: 'admin-content-form__input' %></dd>
               <dt class="admin-content-form__label">
                 <%= ff.label :image %>
               </dt>
               <dd class="admin-content-form__input-container admin-content-form__input-container-uploader">
                 <%= ff.object.persisted? ? image_tag(ff.object.image.to_s) : ff.file_field(:image) %>
               </dd>
-              <dt class="admin-content-form__label">
-                <%= ff.label :order %>
-              </dt>
-              <dd class="admin-content-form__input-container">
-                <%= ff.number_field :order %>
-              </dd>
+              <dt class="admin-content-form__label"><%= ff.label :order %></dt>
+              <dd class="admin-content-form__input-container"><%= ff.number_field :order, class: 'admin-content-form__input' %></dd>
             </dl>
           </li>
         <% end %>

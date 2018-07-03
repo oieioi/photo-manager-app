@@ -60,6 +60,6 @@ class Admin::ExhibitionsController < ApplicationController
       params.fetch(:exhibition, {})
         .permit(:name,
                 :description,
-                photos_attributes: [:id, :image, :_destroy])
+                photos_attributes: [:id, :image, :order, :title, :_destroy])
     end
 end
