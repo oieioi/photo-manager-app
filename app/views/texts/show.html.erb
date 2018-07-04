@@ -2,6 +2,7 @@
   <div class="content__desc">
     <%= @text.title %>
   </div>
-
-  <%= simple_format @text.body %>
+  <div class="content__body">
+    <%= string2markdown(@text.body) %>
+  </div>
 </div>

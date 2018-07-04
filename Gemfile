@@ -16,6 +16,9 @@ gem 'carrierwave'
 gem 'fog-aws'
 gem 'jquery-rails'
 gem 'nested_form'
+gem 'qiita-markdown'
+gem 'github-linguist'
+
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

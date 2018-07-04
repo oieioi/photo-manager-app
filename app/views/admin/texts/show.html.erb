@@ -4,6 +4,6 @@
   <%= link_to '< Back', admin_texts_path %> |
   <%= link_to 'Edit', edit_admin_text_path(@text) %>
 
-  <%= simple_format(@text.body) %>
+  <%= string2markdown(@text.body) %>
 </div>
 
