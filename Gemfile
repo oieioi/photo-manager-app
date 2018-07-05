@@ -18,6 +18,8 @@ gem 'jquery-rails'
 gem 'nested_form'
 #gem 'qiita-markdown'
 #gem 'github-linguist'
+gem 'github-markup'
+gem 'commonmarker'
 
 
 group :development, :test do

@@ -52,6 +52,8 @@ GEM
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
+    commonmarker (0.17.9)
+      ruby-enum (~> 0.5)
     concurrent-ruby (1.0.5)
     crass (1.0.4)
     dotenv (2.5.0)
@@ -78,6 +80,7 @@ GEM
       fog-core
       nokogiri (>= 1.5.11, < 2.0.0)
     formatador (0.2.5)
+    github-markup (2.0.1)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     i18n (1.0.1)
@@ -148,6 +151,8 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
+    ruby-enum (0.7.2)
+      i18n
     ruby_dep (1.5.0)
     sass (3.5.6)
       sass-listen (~> 4.0.0)
@@ -198,8 +203,10 @@ DEPENDENCIES
   bootsnap (>= 1.1.0)
   byebug
   carrierwave
+  commonmarker
   dotenv-rails
   fog-aws
+  github-markup
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
