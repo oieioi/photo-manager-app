@@ -16,8 +16,8 @@ gem 'carrierwave'
 gem 'fog-aws'
 gem 'jquery-rails'
 gem 'nested_form'
-gem 'qiita-markdown'
-gem 'github-linguist'
+#gem 'qiita-markdown'
+#gem 'github-linguist'
 
 
 group :development, :test do
