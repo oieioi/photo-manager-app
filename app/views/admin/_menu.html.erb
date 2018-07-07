@@ -1,6 +1,8 @@
-<menu class="menu">
-  <li class="menu__item"><%= link_to 'Exhibitions', admin_exhibitions_path %></li>
-  <li class="menu__item"><%= link_to 'About site', edit_admin_site_path(@site) %></li>
-  <li class="menu__item"><%= link_to 'Texts', admin_texts_path %></li>
-  <li class="menu__item"><%= link_to 'logout', admin_session_path('delete'), method: :delete %></li>
-</menu>
+<nav class="menu">
+  <ul>
+    <li class="menu__item"><%= link_to 'Exhibitions', admin_exhibitions_path %></li>
+    <li class="menu__item"><%= link_to 'About site', edit_admin_site_path(@site) %></li>
+    <li class="menu__item"><%= link_to 'Texts', admin_texts_path %></li>
+    <li class="menu__item"><%= link_to 'logout', admin_session_path('delete'), method: :delete %></li>
+  </ul>
+</nav>

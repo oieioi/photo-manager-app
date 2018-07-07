@@ -13,19 +13,20 @@
     color: #ff7100;
     cursor: pointer;
   }
+
+  &__menu {
+    display: inline-block;
+
+    &-photo-suit {
+      display: inline-block;
+      list-style: none;
+      margin-left: 10px;
+    }
+
+    &-address {
+      display: inline-block;
+    }
+  }
 }
 
-.menu {
-  display: inline-block;
-
-  &__photo-suit {
-    display: inline-block;
-    list-style: none;
-    margin-left: 10px;
-  }
-
-  &__address {
-    display: inline-block;
-  }
-}
 
