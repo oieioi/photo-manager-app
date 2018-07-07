@@ -1,4 +1,4 @@
-.menu {
+.header {
   background-color: transparent;
   padding: 10px;
 
@@ -13,10 +13,10 @@
     color: #ff7100;
     cursor: pointer;
   }
+}
 
-  &__photo-suits {
-    display: inline-block;
-  }
+.menu {
+  display: inline-block;
 
   &__photo-suit {
     display: inline-block;
