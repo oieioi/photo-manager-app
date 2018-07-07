@@ -4,15 +4,13 @@
       <h1 class="menu__site-name"><%= @site.name %></h1>
     <% end %>
   </div>
-  <menu>
-    <ul class="menu__photo-suits">
-      <% @exhibitions.each do |e| %>
-        <li class="menu__photo-suit"><%= link_to e.name, e %></li>
-      <% end %>
-      <% @texts.each do |t| %>
-        <li class="menu__photo-suit"><%= link_to t.title, t %></li>
-      <% end %>
-      <li class="menu__photo-suit"><%= link_to @site.name, about_path %></li>
-    </ul>
+  <menu class="menu__photo-suit">
+    <% @exhibitions.each do |e| %>
+      <li class="menu__photo-suit"><%= link_to e.name, e %></li>
+    <% end %>
+    <% @texts.each do |t| %>
+      <li class="menu__photo-suit"><%= link_to t.title, t %></li>
+    <% end %>
+    <li class="menu__photo-suit"><%= link_to @site.name, about_path %></li>
   </menu>
 </div>
