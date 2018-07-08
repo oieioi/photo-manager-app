@@ -1,0 +1,17 @@
+.exhibition {
+  &-photos {
+  }
+
+  &-photo {
+    display: block;
+    text-align: center;
+    margin: 100px 0;
+    max-width: 100%;
+    &__title {
+      margin: 2.0em;
+    }
+    &__image {
+    }
+  }
+}
+
