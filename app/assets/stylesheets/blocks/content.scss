@@ -36,6 +36,10 @@
     border: 1px solid #ddd;
   }
 
+  &__date {
+    text-align: right;
+  }
+
   &__body {
     &--markdown {
       h1 {

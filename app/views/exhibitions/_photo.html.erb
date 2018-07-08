@@ -2,7 +2,10 @@
   <div class="exhibition-photo__title">
     <%= photo.title %>
   </div>
-  <div class="exhibition-photo__image">
-    <%= image_tag photo.image.to_s, class: 'lazyload', alt: photo.id, title: photo.title %>
+  <div class="exhibition-photo__image-box">
+    <%= image_tag photo.image.to_s,
+      class: 'exhibition-photo__image',
+      alt: photo.id,
+      title: photo.title %>
   </div>
 </li>
