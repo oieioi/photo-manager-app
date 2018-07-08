@@ -10,4 +10,7 @@
     </li>
     <% end %>
   </ul>
+  <div class="content__date">
+     <%= I18n.l(@exhibition.created_at, format: :short) %>
+  </div>
 </div>
